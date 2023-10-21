@@ -34,7 +34,8 @@ namespace StarlinkPlus {
 				delete components;
 			}
 		}
-	private: System::Windows::Forms::TextBox^ textBox1;
+
+	private: System::Windows::Forms::Label^ label1;
 	protected:
 
 	private:
@@ -50,26 +51,28 @@ namespace StarlinkPlus {
 		/// </summary>
 		void InitializeComponent(void)
 		{
-			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
+			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->SuspendLayout();
 			// 
-			// textBox1
+			// label1
 			// 
-			this->textBox1->Font = (gcnew System::Drawing::Font(L"Segoe UI", 36, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->label1->AutoSize = true;
+			this->label1->Font = (gcnew System::Drawing::Font(L"Segoe UI", 36, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->textBox1->Location = System::Drawing::Point(177, 38);
-			this->textBox1->Name = L"textBox1";
-			this->textBox1->Size = System::Drawing::Size(582, 87);
-			this->textBox1->TabIndex = 0;
-			this->textBox1->Text = L"Starlink Plus";
-			this->textBox1->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
+			this->label1->Location = System::Drawing::Point(291, 51);
+			this->label1->Name = L"label1";
+			this->label1->Size = System::Drawing::Size(384, 81);
+			this->label1->TabIndex = 1;
+			this->label1->Text = L"Starlink Plus";
+			this->label1->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			// 
 			// MyForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
+			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
 			this->ClientSize = System::Drawing::Size(993, 703);
-			this->Controls->Add(this->textBox1);
+			this->Controls->Add(this->label1);
 			this->Name = L"MyForm";
 			this->Text = L"Starlink Plus";
 			this->ResumeLayout(false);
