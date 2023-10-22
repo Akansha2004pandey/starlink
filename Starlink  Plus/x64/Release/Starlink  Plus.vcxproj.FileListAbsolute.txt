@@ -1,0 +1,4 @@
+C:\Users\Administrator\source\repos\Starlink  Plus\Starlink  Plus\x64\Release\Starlink  Plus.vcxproj.AssemblyReference.cache
+C:\Users\Administrator\source\repos\Starlink  Plus\Starlink  Plus\x64\Release\StarlinkPlus.MyForm.resources
+C:\Users\Administrator\source\repos\Starlink  Plus\Starlink  Plus\x64\Release\Starlink  Plus.vcxproj.GenerateResource.cache
+C:\Users\Administrator\source\repos\Starlink  Plus\x64\Release\WebView2Loader.dll
