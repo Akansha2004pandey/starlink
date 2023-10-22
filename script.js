@@ -1,29 +1,28 @@
-const accelerationXSlider = document.getElementById("accelerationXSlider");
-const accelerationYSlider = document.getElementById("accelerationYSlider");
-const accelerationZSlider = document.getElementById("accelerationZSlider");
-const distanceSlider = document.getElementById("distanceSlider");
-const resultElement = document.getElementById("result");
-
+var accelerationXSlider = document.getElementById("accelerationXSlider");
+var accelerationYSlider = document.getElementById("accelerationYSlider");
+var accelerationZSlider = document.getElementById("accelerationZSlider");
+var distanceSlider = document.getElementById("distanceSlider");
+var resultElement = document.getElementById("result");
 function calculateAngleChange() {
-    const accelerationX = parseFloat(accelerationXSlider.value);
-    const accelerationY = parseFloat(accelerationYSlider.value);
-    const accelerationZ = parseFloat(accelerationZSlider.value);
-    const distance = parseFloat(distanceSlider.value);
-    const accelerationMagnitude = Math.sqrt(
+    // Parse the values from the sliders
+    var accelerationX = parseFloat(accelerationXSlider.value);
+    var accelerationY = parseFloat(accelerationYSlider.value);
+    var accelerationZ = parseFloat(accelerationZSlider.value);
+    var distance = parseFloat(distanceSlider.value);
+    var accelerationMagnitude = Math.sqrt(
         accelerationX * accelerationX +
         accelerationY * accelerationY +
         accelerationZ * accelerationZ
     );
-    const angleChangeRad = Math.atan(accelerationMagnitude / 9.81);
-    const angleChangeDegrees = (angleChangeRad * 180) / Math.PI;
-    const horizontalAngleChangeRad = Math.atan(distance * 1000 / distance);
-    const horizontalAngleChangeDegrees = (horizontalAngleChangeRad * 180) / Math.PI;
-    const totalAngleChangeDegrees = angleChangeDegrees + horizontalAngleChangeDegrees;
-
-    resultElement.textContent = `Angle Change: ${totalAngleChangeDegrees.toFixed(2)} degrees`;
+    var angleChangeRad = Math.atan(accelerationMagnitude / 9.81);
+    var angleChangeDegrees = (angleChangeRad * 180) / Math.PI;
+    var horizontalAngleChangeRad = Math.atan(distance * 1000 / distance);
+    var horizontalAngleChangeDegrees = (horizontalAngleChangeRad * 180) / Math.PI;
+    var totalAngleChangeDegrees = angleChangeDegrees + horizontalAngleChangeDegrees;
+    resultElement.textContent = "Angle Change: " + totalAngleChangeDegrees.toFixed(2) + " degrees";
 }
-accelerationXSlider.addEventListener("input", calculateAngleChange);
-accelerationYSlider.addEventListener("input", calculateAngleChange);
-accelerationZSlider.addEventListener("input", calculateAngleChange);
-distanceSlider.addEventListener("input", calculateAngleChange);
+accelerationXSlider.attachEvent("onchange", calculateAngleChange);
+accelerationYSlider.attachEvent("onchange", calculateAngleChange);
+accelerationZSlider.attachEvent("onchange", calculateAngleChange);
+distanceSlider.attachEvent("onchange", calculateAngleChange);
 calculateAngleChange();
